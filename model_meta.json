@@ -1,0 +1,42 @@
+{
+  "input_size": 224,
+  "layout": "NCHW",
+  "channels": "RGB",
+  "mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "std": [
+    0.229,
+    0.224,
+    0.225
+  ],
+  "scale": "divide_by_255_then_standardize",
+  "outputs": [
+    {
+      "index": 0,
+      "name": "lga",
+      "label": "LGA (fetal overgrowth)",
+      "threshold": 0.789768397808075
+    },
+    {
+      "index": 1,
+      "name": "pept_c_p75",
+      "label": "C-peptide > p75 (experimental)",
+      "threshold": 0.671710729598999
+    }
+  ],
+  "metrics": {
+    "val_auroc": [
+      0.7814581458145814,
+      0.4548072662826762
+    ],
+    "test_auroc": [
+      0.829133510167993,
+      0.7563191153238545
+    ]
+  },
+  "note": "Image-only demo model. The multimodal MMFetUS result is not reproduced here; the image branch is the weak branch. C-peptide>p75 is near-unlearnable on this cohort.",
+  "quantized": "int8-dynamic"
+}

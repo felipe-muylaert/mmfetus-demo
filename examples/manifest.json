@@ -1,0 +1,76 @@
+{
+  "examples": [
+    {
+      "id": "Caso 01",
+      "file": "case_01.png",
+      "truth": {
+        "lga": 0,
+        "pept_c_p75": 1
+      },
+      "model_preview": {
+        "lga": 0.985,
+        "pept": 0.959
+      }
+    },
+    {
+      "id": "Caso 02",
+      "file": "case_02.png",
+      "truth": {
+        "lga": 0,
+        "pept_c_p75": 0
+      },
+      "model_preview": {
+        "lga": 0.27,
+        "pept": 0.419
+      }
+    },
+    {
+      "id": "Caso 03",
+      "file": "case_03.png",
+      "truth": {
+        "lga": 0,
+        "pept_c_p75": 1
+      },
+      "model_preview": {
+        "lga": 0.166,
+        "pept": 0.945
+      }
+    },
+    {
+      "id": "Caso 04",
+      "file": "case_04.png",
+      "truth": {
+        "lga": 0,
+        "pept_c_p75": 0
+      },
+      "model_preview": {
+        "lga": 0.074,
+        "pept": 0.014
+      }
+    },
+    {
+      "id": "Caso 05",
+      "file": "case_05.png",
+      "truth": {
+        "lga": 0,
+        "pept_c_p75": 0
+      },
+      "model_preview": {
+        "lga": 0.077,
+        "pept": 0.004
+      }
+    },
+    {
+      "id": "Caso 06",
+      "file": "case_06.png",
+      "truth": {
+        "lga": 0,
+        "pept_c_p75": 0
+      },
+      "model_preview": {
+        "lga": 0.955,
+        "pept": 0.992
+      }
+    }
+  ]
+}

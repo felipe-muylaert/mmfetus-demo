@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MMFetUS — Ultrassom Fetal</title>
+<meta name="description" content="Protótipo de pesquisa (UFSC) para avaliação de ultrassom fetal com IA no navegador." />
+<link rel="stylesheet" href="styles.css" />
+<script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.19.2/dist/ort.min.js"></script>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <h1>MMFetUS</h1>
+    <nav>
+      <button class="tab active" data-tab="avaliar">Avaliar</button>
+      <button class="tab" data-tab="referencias">Referências</button>
+    </nav>
+  </div>
+  <p class="disclaimer">
+    Protótipo de pesquisa (UFSC). Não é um dispositivo médico e não deve ser
+    usado para decisão clínica. O processamento ocorre no seu navegador; nenhuma
+    imagem é enviada a servidores.
+  </p>
+</header>
+
+<main>
+  <!-- ============ AVALIAR ============ -->
+  <section id="avaliar" class="page active">
+    <div id="model-status" class="status">Carregando modelo…</div>
+
+    <div class="picker">
+      <label class="upload-btn">
+        <input type="file" id="file-input" accept="image/*" hidden />
+        📁 Usar imagem do dispositivo
+      </label>
+      <p class="muted">ou escolha um exame de exemplo</p>
+      <div id="examples" class="grid"></div>
+    </div>
+
+    <!-- result -->
+    <div id="result" class="card hidden">
+      <button class="back" id="result-back">← Voltar</button>
+      <div class="preview"><img id="result-img" alt="ultrassom" /></div>
+      <div id="result-loading" class="status">Avaliando imagem…</div>
+      <div id="result-body" class="hidden">
+        <div class="metric primary" id="m-lga"></div>
+        <div class="metric" id="m-pept"></div>
+        <button class="primary-btn" id="go-survey">Responder questionário</button>
+      </div>
+    </div>
+
+    <!-- survey -->
+    <div id="survey" class="card hidden">
+      <h2>Questionário</h2>
+      <p class="muted">1 = Discordo totalmente · 5 = Concordo totalmente</p>
+      <label class="field">
+        <span>Sua função</span>
+        <select id="role">
+          <option value="">Selecione…</option>
+          <option>Médico(a)</option>
+          <option>Residente</option>
+          <option>Estudante</option>
+          <option>Pesquisador(a)</option>
+          <option>Outro</option>
+        </select>
+      </label>
+      <div id="likert"></div>
+      <label class="field">
+        <span>Comentários (opcional)</span>
+        <textarea id="comments" rows="3"></textarea>
+      </label>
+      <button class="primary-btn" id="submit-survey" disabled>Enviar respostas</button>
+      <p id="survey-msg" class="muted"></p>
+    </div>
+  </section>
+
+  <!-- ============ REFERÊNCIAS ============ -->
+  <section id="referencias" class="page">
+    <div class="card">
+      <h2>Sobre este protótipo</h2>
+      <p>
+        Demonstração de pesquisa do programa de Pós-Graduação em Ciência da
+        Computação (PPGCC) da Universidade Federal de Santa Catarina (UFSC).
+        Uma rede neural convolucional (ResNet-18) avalia, no próprio navegador,
+        uma imagem de ultrassom fetal e estima dois desfechos: tamanho fetal
+        aumentado (GIG/LGA) e, de forma experimental, Peptídeo&nbsp;C&nbsp;&gt;&nbsp;p75.
+      </p>
+      <p class="muted">
+        Modelo somente de imagem, de caráter demonstrativo — não reproduz os
+        resultados do modelo multimodal completo. O ramo de imagem é o ramo
+        fraco do modelo, e o alvo Peptídeo&nbsp;C&nbsp;&gt;&nbsp;p75 tem baixa
+        aprendibilidade nesta coorte.
+      </p>
+
+      <h2>Conjunto de dados</h2>
+      <p>
+        Coorte de ultrassonografia fetal para estudo de diabetes mellitus
+        gestacional (DMG), UFSC/HU — imagens anonimizadas e recortadas à região
+        de varredura (sem identificadores). Uso mediante aprovação do comitê de
+        ética em pesquisa. <em>(Inserir número do CAAE/parecer.)</em>
+      </p>
+
+      <h2>Trabalhos relacionados</h2>
+      <ol class="refs">
+        <li>Barroso F. S. M. et al. Comparação de pré-processamento AQUA/HYDOR e
+          CNNs para ultrassom fetal. <em>IEEE CHILECON</em>, 2025.</li>
+        <li>da Correggio K. et al. Fetal liver assessment in gestational diabetes:
+          a systematic review. <em>Journal of Clinical Ultrasound</em>, 2024.</li>
+        <li>Correggio K. Tese de doutorado (PPGCM/UFSC): fígado fetal e
+          EfficientNet, 2025.</li>
+        <li>Mikolaj K. et al. Fetal liver texture for growth prediction.
+          <em>npj Digital Medicine</em>, 2025.</li>
+        <li>McIntyre H. D. et al. Gestational diabetes mellitus.
+          <em>Nature Reviews Disease Primers</em>, 2019.</li>
+      </ol>
+
+      <h2>Autoria</h2>
+      <p>
+        Felipe Soares Muylaert Barroso — orientação: Prof. Aldo von Wangenheim
+        (PPGCC/UFSC). Execução no navegador via
+        <a href="https://onnxruntime.ai/docs/tutorials/web/" target="_blank" rel="noopener">ONNX Runtime Web</a>.
+      </p>
+      <p class="muted">Versão <span id="app-version"></span></p>
+    </div>
+  </section>
+</main>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
