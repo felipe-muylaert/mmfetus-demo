@@ -58,3 +58,11 @@ root). Public repos: free. Private repos: needs GitHub Pro/Team or Education.
 The training/export pipeline lives in the parent project
 (`mmfetus_app/train_export/`): `render_full_frames.py` → `train_image_cnn.py` →
 `quantize_for_web.py`.
+
+## License
+
+**PolyForm Noncommercial License 1.0.0** — see [LICENSE](LICENSE). Use,
+modification and sharing are permitted for **noncommercial purposes only**
+(research, education, nonprofit and government use). Commercial use is not
+granted. The referenced clinical dataset is **not** redistributed here and
+remains subject to its own ethics approval and data-use terms.
