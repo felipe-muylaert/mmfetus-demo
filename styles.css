@@ -100,6 +100,24 @@ select, textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-ra
 }
 .likert-opts button.sel { background: var(--teal); color: #fff; border-color: var(--teal); }
 
+/* MATCH-MED heuristic checklist */
+.scale-legend { font-size: .82rem; color: var(--muted); margin: 10px 0 4px;
+  position: sticky; top: 0; background: var(--card); padding: 6px 0; z-index: 1; }
+.mm-group { margin-top: 18px; }
+.mm-group h3 { font-size: .98rem; color: var(--teal-dark); margin: 0 0 6px;
+  border-bottom: 2px solid #e0eceb; padding-bottom: 4px; }
+.mm-item { padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
+.mm-item p { margin: 0 0 6px; font-size: .92rem; line-height: 1.35; }
+.mm-item .mm-ex { font-size: .8rem; font-style: italic; margin-top: -2px; }
+.mm-opts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; margin-top: 8px; }
+@media (min-width: 560px) { .mm-opts { grid-template-columns: repeat(4, 1fr); } }
+.mm-opts button {
+  padding: 8px 4px; border: 1px solid #ccc; background: #fff; border-radius: 8px;
+  cursor: pointer; font-size: .82rem;
+}
+.mm-opts button.sel { background: var(--teal); color: #fff; border-color: var(--teal); }
+.progress-row { margin-top: 14px; font-size: .88rem; color: var(--muted); text-align: center; }
+
 h2 { font-size: 1.1rem; margin: 18px 0 6px; }
 .refs { padding-left: 18px; }
 .refs li { margin-bottom: 8px; font-size: .9rem; }

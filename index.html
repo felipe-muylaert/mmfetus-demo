@@ -50,27 +50,34 @@
       </div>
     </div>
 
-    <!-- survey -->
+    <!-- survey: MATCH-MED heuristic evaluation -->
     <div id="survey" class="card hidden">
-      <h2>Questionário</h2>
-      <p class="muted">1 = Discordo totalmente · 5 = Concordo totalmente</p>
+      <h2>Avaliação heurística — MATCH-MED</h2>
+      <p class="muted">
+        Conjunto de heurísticas de usabilidade para aplicativos mHealth
+        (MATCH-MED v2.1 — INCoD/GQS, UFSC). Para cada item, avalie o quanto este
+        aplicativo o atende.
+      </p>
       <label class="field">
-        <span>Sua função</span>
+        <span>Perfil do avaliador</span>
         <select id="role">
           <option value="">Selecione…</option>
           <option>Médico(a)</option>
           <option>Residente</option>
           <option>Estudante</option>
           <option>Pesquisador(a)</option>
+          <option>Avaliador(a) de usabilidade</option>
           <option>Outro</option>
         </select>
       </label>
-      <div id="likert"></div>
+      <div class="scale-legend">Escala: Sim · Parcialmente · Não atende · Não se aplica</div>
+      <div id="matchmed"></div>
       <label class="field">
         <span>Comentários (opcional)</span>
         <textarea id="comments" rows="3"></textarea>
       </label>
-      <button class="primary-btn" id="submit-survey" disabled>Enviar respostas</button>
+      <div class="progress-row"><span id="mm-progress"></span></div>
+      <button class="primary-btn" id="submit-survey" disabled>Enviar avaliação</button>
       <p id="survey-msg" class="muted"></p>
     </div>
   </section>
@@ -101,8 +108,20 @@
         ética em pesquisa. <em>(Inserir número do CAAE/parecer.)</em>
       </p>
 
+      <h2>Avaliação de usabilidade</h2>
+      <p>
+        A avaliação do aplicativo utiliza o <strong>MATCH-MED v2.1</strong> —
+        conjunto de 12 heurísticas e checklist (43 itens) para avaliação da
+        usabilidade de aplicativos mHealth em smartphones, desenvolvido no
+        INCoD/GQS da UFSC.
+      </p>
+
       <h2>Trabalhos relacionados</h2>
       <ol class="refs">
+        <li>Gresse von Wangenheim C., von Wangenheim A., Machado E. C., Lacerda T. C.,
+          Azevedo L. F. <em>MATCH-MED — Heurísticas e Checklist para Avaliação da
+          Usabilidade de Aplicativos mHealth em Smartphones.</em> Relatório Técnico
+          INCoD/GQS.10.2017.P, UFSC, 2017.</li>
         <li>Barroso F. S. M. et al. Comparação de pré-processamento AQUA/HYDOR e
           CNNs para ultrassom fetal. <em>IEEE CHILECON</em>, 2025.</li>
         <li>da Correggio K. et al. Fetal liver assessment in gestational diabetes:
