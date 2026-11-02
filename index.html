@@ -50,6 +50,50 @@
       </div>
     </div>
 
+    <!-- consent: must agree before the survey -->
+    <div id="consent" class="card hidden">
+      <h2>Termo de consentimento para avaliação</h2>
+      <div class="consent-text">
+        <p>
+          Você está sendo convidado(a) a participar, de forma <strong>voluntária</strong>,
+          da avaliação de usabilidade deste protótipo de pesquisa do Programa de
+          Pós-Graduação em Ciência da Computação (PPGCC) da Universidade Federal
+          de Santa Catarina (UFSC). Leia este termo com atenção antes de prosseguir.
+        </p>
+        <p><strong>Objetivo.</strong> Coletar a avaliação heurística de usabilidade
+          (instrumento MATCH-MED v2.1) do aplicativo, para fins exclusivamente
+          acadêmicos e de aprimoramento da ferramenta.</p>
+        <p><strong>Participação.</strong> Sua participação é livre e voluntária.
+          Você pode interromper a qualquer momento, sem necessidade de
+          justificativa e sem qualquer prejuízo. Não há compensação financeira.</p>
+        <p><strong>Dados coletados.</strong> Serão registrados: seu perfil
+          profissional (sem identificá-lo(a) nominalmente), suas respostas ao
+          checklist, comentários opcionais, o identificador do exame de exemplo
+          avaliado e as estimativas geradas pelo modelo. <strong>Não</strong> são
+          coletados nome, e-mail, endereço IP ou qualquer dado que permita sua
+          identificação. As imagens de ultrassom são processadas somente no seu
+          navegador e <strong>não</strong> são enviadas a servidores.</p>
+        <p><strong>Armazenamento e uso.</strong> As respostas são agregadas em
+          planilha de acesso restrito da equipe de pesquisa e utilizadas apenas
+          para análise estatística e publicação acadêmica, sem identificação dos
+          participantes.</p>
+        <p><strong>Proteção de dados (LGPD).</strong> O tratamento dos dados segue
+          a Lei nº 13.709/2018. Você pode solicitar informações sobre seus dados
+          ou sua eliminação pelo contato da equipe de pesquisa
+          <em>(inserir contato)</em>.</p>
+        <p><strong>Riscos e ética.</strong> Os riscos são mínimos. Esta avaliação
+          está vinculada ao projeto de pesquisa aprovado pelo Comitê de Ética em
+          Pesquisa <em>(inserir número do CAAE/parecer)</em>.</p>
+      </div>
+      <label class="consent-agree">
+        <input type="checkbox" id="consent-check" />
+        <span>Declaro que li e compreendi as informações acima e concordo em
+          participar voluntariamente desta avaliação.</span>
+      </label>
+      <button class="primary-btn" id="consent-continue" disabled>Concordar e continuar</button>
+      <button class="back" id="consent-decline">Não concordo — voltar</button>
+    </div>
+
     <!-- survey: MATCH-MED heuristic evaluation -->
     <div id="survey" class="card hidden">
       <h2>Avaliação heurística — MATCH-MED</h2>
@@ -136,9 +180,10 @@
 
       <h2>Licença</h2>
       <p>
-        Código licenciado sob a
-        <a href="https://polyformproject.org/licenses/noncommercial/1.0.0/" target="_blank" rel="noopener">PolyForm Noncommercial License 1.0.0</a>
-        — uso, modificação e compartilhamento permitidos apenas para fins
+        <strong>Material de uso restrito</strong> — não é de livre
+        disponibilização. Protótipo de pesquisa (PPGCC/UFSC) sob a
+        <a href="https://polyformproject.org/licenses/noncommercial/1.0.0/" target="_blank" rel="noopener">PolyForm Noncommercial License 1.0.0</a>:
+        uso, modificação e compartilhamento permitidos apenas para fins
         <strong>não comerciais</strong> (pesquisa, ensino, instituições sem
         fins lucrativos e governamentais). O conjunto de dados clínico não é
         redistribuído e permanece sujeito às suas próprias aprovações de ética

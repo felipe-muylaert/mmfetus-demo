@@ -9,6 +9,7 @@ let META = null;        // model_meta.json
 let SESSION = null;     // ort.InferenceSession
 let lastPred = null;    // {lga, pept}
 let lastCase = null;    // string id
+let consentTs = null;   // ISO timestamp when the participant agreed
 
 const $ = (id) => document.getElementById(id);
 
@@ -138,11 +139,13 @@ function renderResult() {
 
 function showPicker() {
   $("result").classList.add("hidden");
+  $("consent").classList.add("hidden");
   $("survey").classList.add("hidden");
   document.querySelector(".picker").classList.remove("hidden");
 }
 function showResult() {
   document.querySelector(".picker").classList.add("hidden");
+  $("consent").classList.add("hidden");
   $("survey").classList.add("hidden");
   $("result").classList.remove("hidden");
 }
@@ -260,11 +263,22 @@ function updateProgress() {
 }
 
 function wireSurvey() {
+  // Result → consent gate (must agree before seeing the survey).
   $("go-survey").onclick = () => {
     $("result").classList.add("hidden");
+    $("consent").classList.remove("hidden");
+    window.scrollTo(0, 0);
+  };
+  $("consent-check").onchange = (e) => {
+    $("consent-continue").disabled = !e.target.checked;
+  };
+  $("consent-continue").onclick = () => {
+    consentTs = new Date().toISOString();
+    $("consent").classList.add("hidden");
     $("survey").classList.remove("hidden");
     window.scrollTo(0, 0);
   };
+  $("consent-decline").onclick = showPicker;
   $("role").onchange = updateProgress;
   $("submit-survey").onclick = submitSurvey;
 }
@@ -276,6 +290,8 @@ async function submitSurvey() {
     timestamp: new Date().toISOString(),
     app_version: CFG.appVersion,
     instrument: "MATCH-MED v2.1",
+    consent_agreed: true,
+    consent_timestamp: consentTs,
     case_id: lastCase,
     lga_prob: lastPred ? lastPred.lga : null,
     pept_c_p75_prob: lastPred ? lastPred.pept : null,

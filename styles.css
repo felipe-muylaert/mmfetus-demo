@@ -118,6 +118,16 @@ select, textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-ra
 .mm-opts button.sel { background: var(--teal); color: #fff; border-color: var(--teal); }
 .progress-row { margin-top: 14px; font-size: .88rem; color: var(--muted); text-align: center; }
 
+/* Consent gate */
+.consent-text { font-size: .9rem; line-height: 1.5; }
+.consent-text p { margin: 0 0 10px; }
+.consent-agree {
+  display: flex; gap: 10px; align-items: flex-start; margin: 16px 0 4px;
+  padding: 12px; background: #eef4f3; border-radius: 10px; font-size: .9rem;
+}
+.consent-agree input { margin-top: 2px; width: 18px; height: 18px; flex: none; }
+#consent-decline { display: block; margin: 10px auto 0; }
+
 h2 { font-size: 1.1rem; margin: 18px 0 6px; }
 .refs { padding-left: 18px; }
 .refs li { margin-bottom: 8px; font-size: .9rem; }

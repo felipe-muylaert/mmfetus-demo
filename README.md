@@ -61,8 +61,10 @@ The training/export pipeline lives in the parent project
 
 ## License
 
+**Not freely available.** Research prototype (PPGCC/UFSC) released under the
 **PolyForm Noncommercial License 1.0.0** — see [LICENSE](LICENSE). Use,
 modification and sharing are permitted for **noncommercial purposes only**
-(research, education, nonprofit and government use). Commercial use is not
+(research, education, nonprofit and government use); commercial use is not
 granted. The referenced clinical dataset is **not** redistributed here and
-remains subject to its own ethics approval and data-use terms.
+remains subject to its own ethics approval and data-use terms, which also
+cover this work.
