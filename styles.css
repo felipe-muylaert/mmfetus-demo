@@ -133,6 +133,7 @@ select, textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-ra
   background: var(--teal); color: #fff; font-weight: 700; font-size: .9rem;
   display: flex; align-items: center; justify-content: center; margin-top: 1px;
 }
+.note-card { border-left: 4px solid var(--teal); background: #f3faf9; }
 .facts { padding-left: 20px; margin: 10px 0 16px; }
 .facts li { margin-bottom: 8px; font-size: .94rem; line-height: 1.45; }
 
