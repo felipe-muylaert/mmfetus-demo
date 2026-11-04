@@ -14,11 +14,11 @@ Runs on any modern browser, **including iPhone Safari** — just open the URL.
 ## Contents
 
 ```
-index.html          UI (Avaliar + Referências tabs)
+index.html          UI (Início + Avaliar + Referências tabs)
 app.js              model load, in-browser inference, survey
 styles.css          styling
 config.js           Apps Script URL for survey logging (optional)
-model.onnx          int8 2-head ResNet18 (~11 MB), opset 12 QDQ
+model.onnx          int8 2-head CNN (~11 MB), opset 12 QDQ
 model_meta.json     input size, mean/std, output order, thresholds
 examples/           6 de-identified full ultrasound frames + manifest.json
 apps_script/        Google Sheet survey collector (Code.gs + SETUP.md)
@@ -26,7 +26,7 @@ apps_script/        Google Sheet survey collector (Code.gs + SETUP.md)
 
 ## The model
 
-Image-only, two-head CNN (ResNet18), trained on full PHI-cropped ultrasound
+Image-only, two-head CNN, trained on full PHI-cropped ultrasound
 frames so both examples and uploads are in-domain. Demo-grade (not the full
 multimodal result):
 
