@@ -118,6 +118,24 @@ select, textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-ra
 .mm-opts button.sel { background: var(--teal); color: #fff; border-color: var(--teal); }
 .progress-row { margin-top: 14px; font-size: .88rem; color: var(--muted); text-align: center; }
 
+/* Landing page */
+.hero { text-align: center; padding: 8px 4px 4px; }
+.hero h2 { font-size: 1.4rem; margin: 10px 0; color: var(--teal-dark); }
+.hero .lead { font-size: 1rem; line-height: 1.55; max-width: 620px; margin: 0 auto 18px; }
+.cta { max-width: 360px; margin-left: auto; margin-right: auto; }
+.center { text-align: center; }
+.steps { list-style: none; padding: 0; margin: 8px 0 0; }
+.steps li { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0; font-size: .94rem; line-height: 1.45; }
+.steps li:last-child { border-bottom: none; }
+.step-n {
+  flex: none; width: 28px; height: 28px; border-radius: 50%;
+  background: var(--teal); color: #fff; font-weight: 700; font-size: .9rem;
+  display: flex; align-items: center; justify-content: center; margin-top: 1px;
+}
+.facts { padding-left: 20px; margin: 10px 0 16px; }
+.facts li { margin-bottom: 8px; font-size: .94rem; line-height: 1.45; }
+
 /* Consent gate */
 .consent-text { font-size: .9rem; line-height: 1.5; }
 .consent-text p { margin: 0 0 10px; }

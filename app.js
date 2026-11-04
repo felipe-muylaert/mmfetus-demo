@@ -17,13 +17,19 @@ const $ = (id) => document.getElementById(id);
 ort.env.wasm.wasmPaths = "https://cdn.jsdelivr.net/npm/onnxruntime-web@1.19.2/dist/";
 
 // ---------------------------------------------------------------- tabs
+function activateTab(name) {
+  document.querySelectorAll(".tab").forEach((x) =>
+    x.classList.toggle("active", x.dataset.tab === name));
+  document.querySelectorAll(".page").forEach((x) =>
+    x.classList.toggle("active", x.id === name));
+  window.scrollTo(0, 0);
+}
 document.querySelectorAll(".tab").forEach((t) => {
-  t.onclick = () => {
-    document.querySelectorAll(".tab").forEach((x) => x.classList.remove("active"));
-    document.querySelectorAll(".page").forEach((x) => x.classList.remove("active"));
-    t.classList.add("active");
-    $(t.dataset.tab).classList.add("active");
-  };
+  t.onclick = () => activateTab(t.dataset.tab);
+});
+// Landing-page call-to-action buttons.
+document.querySelectorAll("[data-goto]").forEach((b) => {
+  b.onclick = () => activateTab(b.dataset.goto);
 });
 
 // ---------------------------------------------------------------- init

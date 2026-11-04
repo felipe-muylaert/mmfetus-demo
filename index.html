@@ -13,7 +13,8 @@
   <div class="bar">
     <h1>MMFetUS</h1>
     <nav>
-      <button class="tab active" data-tab="avaliar">Avaliar</button>
+      <button class="tab active" data-tab="inicio">Início</button>
+      <button class="tab" data-tab="avaliar">Avaliar</button>
       <button class="tab" data-tab="referencias">Referências</button>
     </nav>
   </div>
@@ -25,8 +26,105 @@
 </header>
 
 <main>
+  <!-- ============ INÍCIO (landing) ============ -->
+  <section id="inicio" class="page active">
+    <div class="hero">
+      <h2>Avaliação de ultrassom fetal assistida por IA</h2>
+      <p class="lead">
+        Protótipo de pesquisa do Programa de Pós-Graduação em Ciência da
+        Computação (PPGCC) da Universidade Federal de Santa Catarina (UFSC).
+        Investigamos se a inteligência artificial aplicada a imagens de
+        ultrassom fetal pode auxiliar na identificação de sinais associados ao
+        desequilíbrio glicêmico fetal no diabetes mellitus gestacional (DMG).
+      </p>
+      <button class="primary-btn cta" data-goto="avaliar">Iniciar avaliação →</button>
+      <p class="muted center">
+        Leva cerca de 10 minutos · anônimo · participação voluntária
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Sobre o estudo</h2>
+      <p>
+        O diabetes mellitus gestacional pode levar ao crescimento fetal
+        excessivo (macrossomia / feto grande para a idade gestacional — GIG/LGA)
+        e a repercussões metabólicas no bebê. A textura e a biometria dos
+        tecidos fetais no ultrassom podem conter sinais desse processo. Este
+        protótipo demonstra um modelo de IA que analisa essas imagens.
+      </p>
+      <p class="muted">
+        O objetivo <strong>desta página</strong> é avaliar a <strong>usabilidade
+        do aplicativo</strong> — e não validar clinicamente o modelo. O modelo
+        aqui é somente de imagem, de caráter demonstrativo, e não substitui
+        avaliação médica.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Como o sistema funciona</h2>
+      <ol class="steps">
+        <li>
+          <span class="step-n">1</span>
+          <div>
+            <strong>Escolha um exame.</strong> Selecione um dos exemplos
+            disponíveis ou carregue uma imagem de ultrassom do seu dispositivo.
+          </div>
+        </li>
+        <li>
+          <span class="step-n">2</span>
+          <div>
+            <strong>Processamento no navegador.</strong> Uma rede neural
+            convolucional (ResNet-18) analisa a imagem localmente, no seu
+            próprio navegador — a imagem <strong>não</strong> é enviada a
+            nenhum servidor.
+          </div>
+        </li>
+        <li>
+          <span class="step-n">3</span>
+          <div>
+            <strong>Resultado.</strong> O sistema apresenta duas estimativas:
+            tamanho fetal aumentado (GIG/LGA — principal) e, de forma
+            experimental, Peptídeo&nbsp;C&nbsp;&gt;&nbsp;p75, cada uma com um
+            indicador de risco e o limiar de decisão.
+          </div>
+        </li>
+        <li>
+          <span class="step-n">4</span>
+          <div>
+            <strong>Questionário de usabilidade.</strong> Após ver o resultado,
+            você responde a uma breve avaliação sobre a facilidade de uso do
+            aplicativo.
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>Sobre o questionário</h2>
+      <p>
+        A avaliação utiliza o <strong>MATCH-MED v2.1</strong> — um conjunto de
+        heurísticas e checklist de usabilidade para aplicativos de saúde móvel
+        (mHealth), desenvolvido no INCoD/GQS da UFSC.
+      </p>
+      <ul class="facts">
+        <li><strong>12 heurísticas</strong> de usabilidade (visibilidade do
+          estado, correspondência com o mundo real, prevenção de erros,
+          estética e design, leiturabilidade, entre outras).</li>
+        <li><strong>43 itens</strong> no total, cada um avaliado em uma escala de
+          quatro pontos: <em>Sim · Parcialmente · Não atende · Não se aplica</em>.</li>
+        <li>Um campo <strong>opcional</strong> para comentários livres.</li>
+        <li>É <strong>anônimo</strong>: registramos apenas o seu perfil
+          profissional e as respostas — nunca nome, e-mail ou IP.</li>
+        <li>Antes do questionário, você lê e aceita um <strong>termo de
+          consentimento</strong>. A participação é voluntária e pode ser
+          interrompida a qualquer momento.</li>
+      </ul>
+      <button class="primary-btn cta" data-goto="avaliar">Começar →</button>
+    </div>
+  </section>
+
   <!-- ============ AVALIAR ============ -->
-  <section id="avaliar" class="page active">
+  <section id="avaliar" class="page">
     <div id="model-status" class="status">Carregando modelo…</div>
 
     <div class="picker">
